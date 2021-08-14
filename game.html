@@ -1,0 +1,139 @@
+<!DOCTYPE html>>
+<html>
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <script>
+
+//function computerPlay - randomly selects rock, paper, scissors for computer selection
+//game(){
+
+
+
+function computerPlay(){
+
+
+    var playArray =[ "rock", "paper", "scissors",];
+    let computerChoice = playArray[Math.floor(Math.random() *playArray.length)];
+    console.log(computerChoice);
+    return computerChoice;
+     
+}
+
+    
+  computerPlay();   
+
+ //get input from the user()
+ 
+    
+    
+
+ function play(){
+    let playerChoice = prompt("enter your choice; rock, paper or scissors");
+        console.log(playerChoice);
+        return playerChoice;
+    
+    }
+    play();
+ 
+//make it non case specific
+
+
+//function roundOne - takes two parameters, player Selection and computerChoice, and declares a winner in a string
+            
+
+
+let playerSelection = play();
+let computerSelection = computerPlay();
+
+console.log(playerSelection, computerSelection);
+
+let playerScore = 0;
+let computerScore = 0;
+
+/**let playerSelection = play();
+let computerChoice = computerPlay();**/
+
+function playRound(){
+    if (computerSelection == playerSelection) {
+        console.log("It's a tie!");
+    }
+    else if (computerSelection == "paper" && playerSelection == "rock") {
+        console.log("Computer wins! Paper beats rock!");
+        computerScore ++;
+    } 
+
+    else if (computerSelection == "rock" && playerSelection == "paper") {
+        console.log("You win! Paper beats rock!");
+        playerScore ++;
+    } 
+    else if (computerSelection == "scissors" && playerSelection == "paper") {
+        console.log("Computer wins! Scissors beat paper!");
+        computerScore ++;
+    } 
+    else if (computerSelection == "paper" && playerSelection == "scissors"){
+        console.log("You win!Scissors beat paper!")
+        playerScore ++;
+    } 
+    
+    else if (computerSelection == "scissors" && playerSelection == "rock") {
+        console.log("You win!  Rock beats scissors!");
+        playerScore ++;
+    } 
+    
+
+    else if (computerSelection == "rock" && playerSelection == "scissors") {
+        console.log("Computer wins!Rock beats scissors!");
+        computerScore ++;
+    } 
+     
+   console.log(`${computerScore}, ${playerScore}`)
+
+}
+
+
+
+playRound();
+
+
+
+function game(computerSelection, playerSelection){
+    for (var i = 0; i < 5; i++) {
+        play();
+        computerPlay();
+        playRound();
+       
+        
+    }
+}
+
+game();
+
+
+
+
+/*--function roundOne(playerSelection, computerSelection){
+
+
+    
+
+
+
+
+           
+          
+
+             /*--const playerSlection = playerPlay();
+             const computerSelection = computerPlay();
+
+             console.log(playRound(playerSlection, computerSelection));
+
+
+ //} --*/
+    </script>
+</body>
+
+
+</html>
